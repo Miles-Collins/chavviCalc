@@ -41,26 +41,67 @@ public class CalculatorController {
     private void executeCommand(Character command) {
         switch (command) {
             case 'a':
+                handleFirstValueInput();
+                break;
+            case 'b':
+                handleSecondValueInput();
+                break;
+            case '+':
                 handleAddition();
                 break;
-            case 's':
+            case '-':
                 handleSubtraction();
                 break;
-            case 'm':
+            case '*':
                 handleMultiplication();
                 break;
-            case 'd':
+            case '/':
                 handleDivision();
                 break;
             case 'c':
                 handleClear();
                 break;
             case 'q':
-                view.displayQuitMessage();
+                view.printQuitMessage();
                 break;
             default:
-                view.displayError("Unknown command");
+                view.printError("Unknown command");
         }
+    }
+
+    private void handleFirstValueInput() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleFirstValueInput'");
+    }
+
+    private void handleSecondValueInput() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleSecondValueInput'");
+    }
+
+    private void handleAddition() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleAddition'");
+    }
+
+    private void handleSubtraction() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleSubtraction'");
+    }
+
+    private void handleMultiplication() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleMultiplication'");
+    }
+
+    private void handleDivision() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleDivision'");
+    }
+
+    private void handleClear() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleClear'");
     }
 
 }
