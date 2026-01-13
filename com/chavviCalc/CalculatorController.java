@@ -78,8 +78,11 @@ public class CalculatorController {
     }
 
     private void handleSecondValueInput() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleSecondValueInput'");
+        view.printPrompt("Enter a number for B: ");
+        double value = getNumber();
+        if (!Double.isNaN(value)) {
+            model.setB(value);
+        }
     }
 
     private void handleAddition() {

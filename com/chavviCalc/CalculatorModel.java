@@ -54,7 +54,17 @@ public class CalculatorModel {
     }
 
     public void setA(double value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setA'");
+        this.a = roundToThreeSignificantDigits(value);
     }
+
+    public void setB(double value) {
+        this.b = roundToThreeSignificantDigits(value);
+    }
+
+    private double roundToThreeSignificantDigits(double value) {
+        if (value == 0) {
+            return 0.00;
+        }
+    }
+
 }
