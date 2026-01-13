@@ -1,13 +1,14 @@
+package com.chavviCalc;
 
 import java.util.Scanner;
 
-public class ChavviCalcController {
+public class CalculatorController {
 
-    private ChavviCalcModel model;
-    private ChavviCalcView view;
+    private CalculatorModel model;
+    private CalculatorView view;
     private Scanner scanner;
 
-    public CalculatorController(ChavviCalcModel model, ChavviCalcView view, Scanner scanner) {
+    public CalculatorController(CalculatorModel model, CalculatorView view, Scanner scanner) {
         this.model = model;
         this.view = view;
         this.scanner = scanner;

@@ -10,12 +10,13 @@ public class ChavviCalcApp {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        ChavviCalcModel model = new ChavviCalcModel();
-        ChavviCalcView view = new ChavviCalcView();
-        ChavviCalcController controller = new CalcController(model, view, scan);
+        CalculatorModel model = new CalculatorModel();
+        CalculatorView view = new CalculatorView();
+        CalculatorController controller = new CalculatorController(model, view, scan);
 
         controller.start();
 
+        scan.close();
     }
 
 }

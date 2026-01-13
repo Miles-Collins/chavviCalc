@@ -1,5 +1,6 @@
+package com.chavviCalc;
 
-public class ChavviCalcView {
+public class CalculatorView {
 
     private static void printMenuLine() {
         System.out.println(
