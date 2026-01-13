@@ -9,18 +9,7 @@ public class ChavviCalcApp {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Character command = '_';
 
-        // loop until user quits
-        while (command != 'q') {
-            printMenu();
-            System.out.print("Enter a command: ");
-            command = menuGetCommand(scan);
-
-            executeCommand(scan, command);
-        }
-
-        scan.close();
     }
 
     //
