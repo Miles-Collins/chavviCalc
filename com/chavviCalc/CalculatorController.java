@@ -70,8 +70,11 @@ public class CalculatorController {
     }
 
     private void handleFirstValueInput() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleFirstValueInput'");
+        view.printPrompt("Enter a number for A: ");
+        double value = getNumber();
+        if (!Double.isNaN(value)) {
+            model.setA(value);
+        }
     }
 
     private void handleSecondValueInput() {
@@ -102,6 +105,15 @@ public class CalculatorController {
     private void handleClear() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'handleClear'");
+    }
+
+    private double getNumber() {
+        try {
+            return Double.parseDouble(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            view.printError("Invalid number format");
+            return Double.NaN;
+        }
     }
 
 }

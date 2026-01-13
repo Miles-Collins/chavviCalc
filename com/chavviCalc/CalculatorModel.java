@@ -52,4 +52,9 @@ public class CalculatorModel {
     public void reset() {
         result = 0.0;
     }
+
+    public void setA(double value) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setA'");
+    }
 }
