@@ -14,57 +14,56 @@ public class CalculatorModel {
         this.result = value;
     }
 
-    public double add(double a, double b) {
-        this.a = a;
-        this.b = b;
-        this.a = a + b;
-        result = this.a;
+    public double add() {
+        result = roundToThreeDecimalPlaces(a + b);
+        a = result;
         return result;
     }
 
-    public double subtract(double a, double b) {
-        this.a = a;
-        this.b = b;
-        this.a = a - b;
-        result = this.a;
+    public double subtract() {
+        result = roundToThreeDecimalPlaces(a - b);
+        a = result;
         return result;
     }
 
-    public double multiply(double a, double b) {
-        this.a = a;
-        this.b = b;
-        this.a = a * b;
-        result = this.a;
+    public double multiply() {
+        result = roundToThreeDecimalPlaces(a * b);
+        a = result;
         return result;
     }
 
-    public double divide(double a, double b) throws IllegalArgumentException {
+    public double divide() throws IllegalArgumentException {
         if (b == 0) {
             throw new IllegalArgumentException("ERROR: Cannot divide by zero");
         }
-        this.a = a;
-        this.b = b;
-        this.a = a / b;
-        result = this.a;
+        result = roundToThreeDecimalPlaces(a / b);
+        a = result;
         return result;
     }
 
     public void reset() {
+        a = 0.0;
+        b = 0.0;
         result = 0.0;
     }
 
     public void setA(double value) {
-        this.a = roundToThreeSignificantDigits(value);
+        this.a = roundToThreeDecimalPlaces(value);
     }
 
     public void setB(double value) {
-        this.b = roundToThreeSignificantDigits(value);
+        this.b = roundToThreeDecimalPlaces(value);
     }
 
-    private double roundToThreeSignificantDigits(double value) {
-        if (value == 0) {
-            return 0.00;
-        }
+    private double roundToThreeDecimalPlaces(double value) {
+        return Math.round(value * 1000.0) / 1000.0;
     }
 
+    public double getA() {
+        return a;
+    }
+
+    public double getB() {
+        return b;
+    }
 }

@@ -86,8 +86,8 @@ public class CalculatorController {
     }
 
     private void handleAddition() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleAddition'");
+        model.add();
+        view.printMessage("A + B = " + model.roundToThreeDecimalPlaces(model.getA()));
     }
 
     private void handleSubtraction() {
