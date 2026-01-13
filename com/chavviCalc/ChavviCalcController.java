@@ -28,4 +28,33 @@ public class ChavviCalcController {
         scanner.close();
     }
 
+    private static Character menuGetCommand(Scanner scan) {
+        Character command = '_';
+
+        String rawInput = scan.nextLine();
+
+        if (rawInput.length() > 0) {
+            rawInput = rawInput.toLowerCase();
+            command = rawInput.charAt(0);
+        }
+
+        return command;
+    }
+
+    // calculator functions
+    private static Boolean executeCommand(Scanner scan, Character command) {
+        Boolean success = true;
+
+        switch (command) {
+            case 'q':
+                System.out.println("Thank you for using Chavvi Calc");
+                break;
+            default:
+                System.out.println("ERROR: Unknown commmand");
+                success = false;
+        }
+
+        return success;
+    }
+
 }
