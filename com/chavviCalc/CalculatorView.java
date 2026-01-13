@@ -15,9 +15,15 @@ public class CalculatorView {
     // prints the menu
     public static void printMenu() {
         printMenuLine();
-        System.out.println("ChavviCalc");
+        System.out.println("Chavvi Calc - Calculator Menu");
         printMenuLine();
-
+        printMenuCommand('a', "Enter a value for A");
+        printMenuCommand('b', "Enter a value for B");
+        printMenuCommand('+', "Add");
+        printMenuCommand('-', "Subtract");
+        printMenuCommand('*', "Multiply");
+        printMenuCommand('/', "Divide");
+        printMenuCommand('c', "Clear");
         printMenuCommand('q', "Quit");
 
         printMenuLine();
