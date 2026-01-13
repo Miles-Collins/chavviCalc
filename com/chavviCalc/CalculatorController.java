@@ -21,18 +21,14 @@ public class CalculatorController {
         while (command != 'q') {
             view.printMenu();
             System.out.print("Enter a command: ");
-            command = menuGetCommand(scan);
-
-            executeCommand(scan, command);
+            command = getCommand();
+            executeCommand(command);
         }
-
-        scanner.close();
     }
 
-    private static Character menuGetCommand(Scanner scan) {
+    private Character getCommand() {
         Character command = '_';
-
-        String rawInput = scan.nextLine();
+        String rawInput = scanner.nextLine();
 
         if (rawInput.length() > 0) {
             rawInput = rawInput.toLowerCase();
@@ -42,20 +38,29 @@ public class CalculatorController {
         return command;
     }
 
-    // calculator functions
-    private static Boolean executeCommand(Scanner scan, Character command) {
-        Boolean success = true;
-
+    private void executeCommand(Character command) {
         switch (command) {
+            case 'a':
+                handleAddition();
+                break;
+            case 's':
+                handleSubtraction();
+                break;
+            case 'm':
+                handleMultiplication();
+                break;
+            case 'd':
+                handleDivision();
+                break;
+            case 'c':
+                handleClear();
+                break;
             case 'q':
-                System.out.println("Thank you for using Chavvi Calc");
+                view.displayQuitMessage();
                 break;
             default:
-                System.out.println("ERROR: Unknown commmand");
-                success = false;
+                view.displayError("Unknown command");
         }
-
-        return success;
     }
 
 }
