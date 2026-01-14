@@ -19,7 +19,7 @@ public class CalculatorView {
         printMenuLine();
         System.out.println("Chavvi Calc - Calculator Menu");
         printMenuLine();
-        System.out.println("A = " + model.getA(a) + "     " + "B = " + model.getB(b));
+        System.out.println("A = " + formatDecimal(a) + "     " + "B = " + formatDecimal(b));
         printMenuCommand('a', "Enter a value for A");
         printMenuCommand('b', "Enter a value for B");
         printMenuCommand('+', "Add");
@@ -44,10 +44,20 @@ public class CalculatorView {
     }
 
     public void printResult(double result) {
-        System.out.printf("Result: %.2f\n", result);
+        System.out.printf("Result: %s\n", formatDecimal(result));
     }
 
     public void printQuitMessage() {
         System.out.println("Thank you for using Chavvi Calculator!");
+    }
+
+    public String formatDecimal(double value) {
+        if (value == 0.0) {
+            return "0.000";
+        }
+
+        double number = model.roundToThreeDecimalPlaces(value);
+
+        return number + "";
     }
 }

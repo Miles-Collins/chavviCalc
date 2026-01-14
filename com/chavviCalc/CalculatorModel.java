@@ -55,15 +55,15 @@ public class CalculatorModel {
         this.b = roundToThreeDecimalPlaces(value);
     }
 
-    private double roundToThreeDecimalPlaces(double value) {
+    public double roundToThreeDecimalPlaces(double value) {
         return Math.round(value * 1000.0) / 1000.0;
     }
 
-    public double getA(double a) {
+    public double getA() {
         return a;
     }
 
-    public double getB(double b) {
+    public double getB() {
         return b;
     }
 }
