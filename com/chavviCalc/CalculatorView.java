@@ -2,6 +2,8 @@ package com.chavviCalc;
 
 public class CalculatorView {
 
+    private CalculatorModel model;
+
     private static void printMenuLine() {
         System.out.println(
                 "----------------------------------------------------------"
@@ -13,10 +15,11 @@ public class CalculatorView {
     }
 
     // prints the menu
-    public static void printMenu() {
+    public void printMenu(double a, double b) {
         printMenuLine();
         System.out.println("Chavvi Calc - Calculator Menu");
         printMenuLine();
+        System.out.println("A = " + model.getA(a) + "     " + "B = " + model.getB(b));
         printMenuCommand('a', "Enter a value for A");
         printMenuCommand('b', "Enter a value for B");
         printMenuCommand('+', "Add");

@@ -19,7 +19,7 @@ public class CalculatorController {
 
         // loop until user quits
         while (command != 'q') {
-            view.printMenu();
+            view.printMenu(model.getA(), model.getB());
             System.out.print("Enter a command: ");
             command = getCommand();
             executeCommand(command);

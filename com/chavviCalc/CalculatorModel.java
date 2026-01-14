@@ -59,11 +59,11 @@ public class CalculatorModel {
         return Math.round(value * 1000.0) / 1000.0;
     }
 
-    public double getA() {
+    public double getA(double a) {
         return a;
     }
 
-    public double getB() {
+    public double getB(double b) {
         return b;
     }
 }
