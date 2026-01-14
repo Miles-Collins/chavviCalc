@@ -2,8 +2,6 @@ package com.chavviCalc;
 
 public class CalculatorView {
 
-    private CalculatorModel model;
-
     private static void printMenuLine() {
         System.out.println(
                 "----------------------------------------------------------"
@@ -52,12 +50,6 @@ public class CalculatorView {
     }
 
     public String formatDecimal(double value) {
-        if (value == 0.0) {
-            return "0.000";
-        }
-
-        double number = model.roundToThreeDecimalPlaces(value);
-
-        return number + "";
+        return String.format("%.3f", value);
     }
 }

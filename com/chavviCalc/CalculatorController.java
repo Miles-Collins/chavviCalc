@@ -91,23 +91,23 @@ public class CalculatorController {
     }
 
     private void handleSubtraction() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleSubtraction'");
+        model.subtract();
+        view.printMessage("A - B = " + model.roundToThreeDecimalPlaces(model.getA()));
     }
 
     private void handleMultiplication() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleMultiplication'");
+        model.multiply();
+        view.printMessage("A * B = " + model.roundToThreeDecimalPlaces(model.getA()));
     }
 
     private void handleDivision() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleDivision'");
+        model.divide();
+        view.printMessage("A / B = " + model.roundToThreeDecimalPlaces(model.getA()));
     }
 
     private void handleClear() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleClear'");
+        model.reset();
+        view.printMessage("Calculator cleared.");
     }
 
     private double getNumber() {
