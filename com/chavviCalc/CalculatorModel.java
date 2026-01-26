@@ -34,7 +34,7 @@ public class CalculatorModel {
 
     public double divide() throws IllegalArgumentException {
         if (b == 0) {
-            throw new IllegalArgumentException("ERROR: Cannot divide by zero");
+            throw new IllegalArgumentException("Cannot divide by zero");
         }
         result = roundToThreeDecimalPlaces(a / b);
         a = result;

@@ -101,8 +101,12 @@ public class CalculatorController {
     }
 
     private void handleDivision() {
-        model.divide();
-        view.printMessage("A / B = " + model.roundToThreeDecimalPlaces(model.getA()));
+        try {
+            model.divide();
+            view.printMessage("A / B = " + model.roundToThreeDecimalPlaces(model.getA()));
+        } catch (IllegalArgumentException e) {
+            view.printError(e.getMessage());
+        }
     }
 
     private void handleClear() {
